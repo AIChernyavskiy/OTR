@@ -14,12 +14,23 @@ public class FirstTask {
     public void executeFirstTask() {
         String headRange;
         String tailRange;
+        IPAddressValidator addressValidator = new IPAddressValidator();
         while (true) {
             printFirstMessage();
             headRange = scanner.nextLine();
+            if (exit(headRange)) {
+                break;
+            }
             printSecondMessage();
             tailRange = scanner.nextLine();
-                new IPAddressValidator().validate(headRange);
+            if (exit(tailRange)) {
+                break;
+            } else if (addressValidator.validate(headRange) && addressValidator.validate(tailRange)) {
+                new RangeIPAddress(scanner, headRange, tailRange).calculateRange();
+            } else {
+
+            }
+
         }
     }
 
@@ -29,6 +40,14 @@ public class FirstTask {
 
     private void printSecondMessage() {
         System.out.println("Введите конечный IP адрес диапозона или exit для выхода");
+    }
+
+    private boolean exit(String exit) {
+        if (exit.equals("exit")) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

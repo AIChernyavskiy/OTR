@@ -19,7 +19,7 @@ public class IPAddressValidator {
         this.pattern = Pattern.compile(IPADDRESS_PATTERN);
     }
 
-    public boolean validate(final String ip){
+    public boolean validate(final String ip) {
         matcher = pattern.matcher(ip);
         return matcher.matches();
     }
