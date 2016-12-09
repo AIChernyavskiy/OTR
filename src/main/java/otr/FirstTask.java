@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class FirstTask {
 
+
     private Scanner scanner;
 
     public FirstTask(Scanner scanner) {
@@ -28,7 +29,7 @@ public class FirstTask {
             } else if (addressValidator.validate(headRange) && addressValidator.validate(tailRange)) {
                 new RangeIPAddress(scanner, headRange, tailRange).calculateRange();
             } else {
-
+                printErrorMessage();
             }
 
         }
@@ -42,12 +43,24 @@ public class FirstTask {
         System.out.println("Введите конечный IP адрес диапозона или exit для выхода");
     }
 
+    private void printErrorMessage() {
+        System.out.println("Некорректно задан диапозон");
+    }
+
     private boolean exit(String exit) {
         if (exit.equals("exit")) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
 }
