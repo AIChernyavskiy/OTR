@@ -1,16 +1,12 @@
 package otr;
 
 
-import java.util.Scanner;
-
 public class RangeIPAddress {
 
-    private Scanner scanner;
-    private String headRange;
-    private String tailRange;
+    String headRange;
+    String tailRange;
 
-    public RangeIPAddress(Scanner scanner, String headRange, String tailRange) {
-        this.scanner = scanner;
+    public RangeIPAddress(String headRange, String tailRange) {
         this.headRange = headRange;
         this.tailRange = tailRange;
     }
@@ -49,14 +45,6 @@ public class RangeIPAddress {
 
     private void printErrorMessage() {
         System.out.println("Некорректно задан диапозон");
-    }
-
-    public Scanner getScanner() {
-        return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
     }
 
     public String getHeadRange() {

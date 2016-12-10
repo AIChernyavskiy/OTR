@@ -23,4 +23,16 @@ public class IPAddressValidator {
         matcher = pattern.matcher(ip);
         return matcher.matches();
     }
+
+    public Pattern getPattern() {
+        return pattern;
+    }
+
+    public Matcher getMatcher() {
+        return matcher;
+    }
+
+    public static String getIpaddressPattern() {
+        return IPADDRESS_PATTERN;
+    }
 }

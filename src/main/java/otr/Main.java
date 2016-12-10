@@ -12,14 +12,17 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        RunTask firstTask = new FirstTask(in);
+        RunTask secondTask = new SecondTask(in);
         printMainMenu();
         String stringMainMenu;
         while (!(stringMainMenu = in.nextLine()).equals("exit")) {
             switch (stringMainMenu) {
                 case "1":
-                    new FirstTask(in).executeFirstTask();
+                    firstTask.executeTask();
                     break;
                 case "2":
+                    secondTask.executeTask();
                     break;
                 default:
                     System.out.println("Введите 1 или 2 для продолжения, или exit для завершения");

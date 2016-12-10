@@ -3,7 +3,7 @@ package otr;
 
 import java.util.Scanner;
 
-public class FirstTask {
+public class FirstTask implements RunTask {
 
 
     private Scanner scanner;
@@ -12,7 +12,7 @@ public class FirstTask {
         this.scanner = scanner;
     }
 
-    public void executeFirstTask() {
+    public void executeTask() {
         String headRange;
         String tailRange;
         IPAddressValidator addressValidator = new IPAddressValidator();
@@ -27,7 +27,7 @@ public class FirstTask {
             if (exit(tailRange)) {
                 break;
             } else if (addressValidator.validate(headRange) && addressValidator.validate(tailRange)) {
-                new RangeIPAddress(scanner, headRange, tailRange).calculateRange();
+                (new RangeIPAddress(headRange, tailRange)).calculateRange();
             } else {
                 printErrorMessage();
             }
@@ -58,9 +58,4 @@ public class FirstTask {
     public Scanner getScanner() {
         return scanner;
     }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
 }
