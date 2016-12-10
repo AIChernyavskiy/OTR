@@ -1,5 +1,8 @@
 package otr;
 
+import otr.first.FirstTask;
+import otr.second.SecondTask;
+
 import java.util.Scanner;
 
 public class Main {
