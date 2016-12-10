@@ -33,18 +33,22 @@ public class PrintTelephone {
         if (map.containsKey(fio)) {
             printNumber();
         } else {
-            System.out.println("Такого ФИО нет в БД");
+            printErrorMessage();
         }
     }
 
     private void printNumber() {
         if ((map.get(fio)).isEmpty()) {
-            System.out.println("Такого ФИО нет в БД");
+            printErrorMessage();
         } else {
             for (String s : (map.get(fio))) {
                 System.out.println(s);
             }
         }
+    }
+
+    private void printErrorMessage() {
+        System.out.println("Такого ФИО нет в БД");
     }
 
     public String getFio() {
