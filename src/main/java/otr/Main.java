@@ -22,15 +22,19 @@ public class Main {
         while (!(stringMainMenu = in.nextLine()).equals("exit")) {
             switch (stringMainMenu) {
                 case "1":
-                    firstTask.executeTask();
+                    runTask(firstTask);
                     break;
                 case "2":
-                    secondTask.executeTask();
+                    runTask(secondTask);
                     break;
                 default:
                     System.out.println("Введите 1 или 2 для продолжения, или exit для завершения");
             }
             printMainMenu();
         }
+    }
+
+    static void runTask(RunTask task) {
+        task.executeTask();
     }
 }

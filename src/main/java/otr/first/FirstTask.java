@@ -49,7 +49,7 @@ public class FirstTask implements RunTask {
         System.out.println("Некорректно задан диапозон");
     }
 
-    private boolean exit(String exit) {
+    public boolean exit(String exit) {
         if (exit.equals("exit")) {
             return true;
         } else {

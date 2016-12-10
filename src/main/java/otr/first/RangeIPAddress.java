@@ -19,7 +19,7 @@ public class RangeIPAddress {
         }
     }
 
-    private boolean checkIPAdress() {
+    public boolean checkIPAdress() {
         int low = getFourthBit(headRange);
         int top = getFourthBit(tailRange);
         if ((top - low) > 1) {
@@ -29,7 +29,7 @@ public class RangeIPAddress {
         }
     }
 
-    private int getFourthBit(String str) {
+    public int getFourthBit(String str) {
         String[] strings = str.split("\\.");
         int bit = Integer.valueOf(strings[3]);
         return bit;

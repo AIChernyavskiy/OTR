@@ -31,7 +31,7 @@ public class SecondTask implements RunTask {
         System.out.println("Введите ФИО или exit для выхода");
     }
 
-    private boolean exit(String exit) {
+    public boolean exit(String exit) {
         if (exit.equals("exit")) {
             return true;
         } else {
